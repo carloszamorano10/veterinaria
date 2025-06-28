@@ -1,24 +1,27 @@
-const fs = require("fs")
-const {registrar, leer} = require("./operaciones")
 
-const escribirArchivoOP = ()=>{
-    fs.writeFileSync("operaciones.js", "operaciones", "utf-8")
-    return
-}
+const { registrar, leer } = require("./operaciones");
 
-const escribirArchivoCitas = ()=>{
-    fs.writeFileSync("citas.json", "citas", "utf-8")
-    return
-}
+
 
 const argumentos = process.argv.slice(2);
 
-const operacion = argumentos[0]
+const operacion = argumentos[0];
 
-if(operacion === "registrar"){
-registrar(nombre, edad, animal, color, enfermedad)
+if (operacion === "registrar") {
+   
+  
+
+  const datosCita = {
+    nombre: argumentos[1],
+    edad: parseInt(argumentos[2]), 
+    tipo: argumentos[3],
+    color: argumentos[4],
+    enfermedad: argumentos[5]
+  };
+
+  registrar(datosCita);
 }
 
-if(operacion === "leer"){
-leer()
+if (operacion === "leer") {
+  leer();
 }

@@ -1,11 +1,11 @@
-const fs = requier("fs")
+const fs = require('fs');
 
 
 
 const registrar = ({nombre, edad, tipo, color, enfermedad})=>{ 
     const citas = []
     const datos = fs.readFileSync("citas.json", "utf-8")
-    citas = JSON.parse(datos)
+    citas: JSON.parse(datos)
 
     const nuevaCita ={
         nombre,
